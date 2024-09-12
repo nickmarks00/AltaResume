@@ -1,0 +1,200 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.7.2, 28 Aug 2024) written by LianTze Lim (liantze@gmail.com), based on the
+% CV created by BusinessInsider at http://www.businessinsider.my/a-sample-resume-for-marissa-mayer-2016-7/?r=US&IR=T
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[9pt,a4paper,ragged2e]{altacv}
+%% AltaCV uses the fontawesome5 and simpleicons packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
+
+% Change the page layout if you need to
+\geometry{left=1.25cm,right=1.25cm,top=1.2cm,bottom=1.2cm,columnsep=0.8cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+% WHEN COMPILING WITH XELATEX PLEASE USE
+% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" mmayer.tex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[default]{lato}
+  \usepackage{url}
+  \usepackage{xcolor}
+  \hypersetup{
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+	}
+\fi
+
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{000000}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{2E2E2E}
+\colorlet{heading}{VividPurple}
+\colorlet{headingrule}{VividPurple}
+\colorlet{accent}{VividPurple}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+\renewcommand{\cvItemMarker}{{\small\textbullet}}
+\renewcommand{\cvRatingMarker}{\faCircle}
+
+\begin{document}
+\name{Nick Marks}
+\tagline{} % need this here even if blank so that it renders
+\personalinfo{
+	\phone{(+61) 477 971 009}
+	\email{\href{mailto:nickmarks00@gmail.com}{nickmarks00@gmail.com}}
+	\linkedin{\href{https://www.linkedin.com/in/nickmarks00/}{LinkedIn}}
+	\github{\href{https://www.github.com/nickmarks00}{GitHub}}
+	\homepage{\href{https://chumbers.io}{Personal Site}}
+}
+
+\makecvheader
+
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+\AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.6}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+
+	\cvsection{Education}
+
+	\cvevent{BSc Computer Science and Pure Mathematics | \newline BE Electrical and Computer Systems Engineering}{Monash University (WAM: 87.8\%, GPA: 3.88/4.00)}{ 03/2020 - Present }{Melbourne, VIC}
+	\begin{itemize}
+		\item \textit{Relevant coursework (BSc):} Advanced Algorithms, Data Structures, Operating Systems, AI, Computer Architecture, Linear Algebra, Advanced Calculus, Modelling and Simulation, Group Theory, Real \& Functional Analysis, Graph Theory.
+		\item \textit{Relevant coursework (BE):} Embedded Systems, Digital Systems and Logic, Deep Learning, Probability Modelling, FPGA/ASIC Design,  Electrical Circuits, Signals and Systems, Information Theory, Networking, Energy/Power Systems, Web-app Development, Fluid Mechanics.
+	\end{itemize}
+
+	\divider
+
+	\cvevent{ Semester Abroad }{Purdue University (WAM: 92.1\%, GPA: 4.00/4.00)}{ 01/2023 - 05/2023 }{West Lafayette, IN}
+	\begin{itemize}
+		\item \textit{Relevant coursework:} Integrated Circuit Design, Control Systems, Electromagnetics, Artificial Intelligence (AI) and Machine Learning.
+	\end{itemize}
+
+	\cvsection{Projects}
+
+	\cvevent{}{Autonomous Navigation through Offline Deep Learning}{07/2023 - Present}{Monash University}
+	\begin{itemize}
+		\item Researched applications of offline deep learning techniques to autonomously navigate a Penguin Pi bot around varying complexities of road tracks.
+		\item Crafted pipeline for training and deploying a model trained via Implicit Q-Learning, using tools like regression analysis and grid-search to optimise trained experts.
+	\end{itemize}
+
+	\divider
+
+	\cvevent{}{Rocket Guidance Systems at \href{https://www.purdueorbital.com/}{Purdue Orbital} \faLink}{01/2023 - 05/2023}{West Lafayette, IN}
+	\begin{itemize}
+		\item Produced control systems on Purdue Orbital's guidance and navigation team for rockets launched by the team in the middle of 2023 as part of Project Icarus.
+		\item Crafted state models and Simulink implementations of rocket attitude control and implemented a real-time operating system to interface between the control system, onboard sensors and diagnostic systems.
+	\end{itemize}
+
+	\divider
+
+	\cvevent{}{Pollish - A Polling Social Media Platform}{03/2022 - 11/2022}{Melbourne, VIC}
+	\begin{itemize}
+		\item Produced a full-stack polling mobile application that collated and recommended content from friends that users could vote on. The backend was built using a Django REST framework and the frontend using React Native.
+	\end{itemize}
+
+	\divider
+
+	\cvevent{}{Robot-assisted Drone Navigation at \href{https://www.deepneuron.org/}{Monash DeepNeuron} \faLink}{08/2022 - 11/2022}{Monash University}
+	\begin{itemize}
+		\item Developed a behavioral cloning-based approach to train a AI-assisted drone navigation system capable of flying point-to-point within simulation.
+		\item Evaluated the model performance in comparison to a reinforcement-learning approach on a dataset generated by human participants in a small-scale trial ($\sim$30 participants).
+	\end{itemize}
+
+	\cvsection{Technical Skills}
+	\smallskip
+	\begin{itemize}
+		\item \textit{Frontend:} JavaScript, React, React Native, NextJS
+		\item \textit{Backend:} Django, Node.js, GraphQL, Golang, Java, C\#
+		\item \textit{Other languages:} C/C++, Verilog, Python, SQL (MySQL, Postgresql), NoSQL, Redis, Matlab, \LaTeX
+		\item \textit{AI and HPC:} Pytorch, TensorFlow, OpenMP, CUDA, CMake, Docker, Pandas, Numpy
+		\item \textit{Cloud/DevOps:} AWS (Amplify), Google Cloud (Google App Engine), Linux, Bash
+	\end{itemize}
+
+	\cvsection{Languages}
+
+	\cvskill{English}{5}
+	% \divider
+
+	\cvskill{German}{4} %% supports X.5 values.
+
+	%% Switch to the right column. This will now automatically move to the second
+	%% page if the content is too long.
+	\switchcolumn
+
+	\cvsection{Experience}
+	\cvevent{CO2 Conversion Project Lead}{\href{https://www.mcarboncapture.com/chemecco}{Monash Carbon Capture and Conversion} \faLink}{08/2021 - 12/2023}{Melbourne, VIC}
+	\begin{itemize}
+		\item Founded a large-scale research project on the electrochemical reduction of CO2 into fuels in a novel, catalysed flow cell environment.
+		\item Self-taught relevant advanced chemistry to grow the team to 10+ students and established relationships with research fellows and professors at my university and abroad.
+		\item Our team received US\$250,000 as a top 23 university finalist worldwide in the \href{https://www.xprize.org/prizes/carbonremoval}{XPRIZE Carbon Removal Competition} \faLink.
+	\end{itemize}
+
+	\divider
+
+	\cvevent{Lead Software Developer}{\href{https://www.mymi.org.au/}{Monash Young MedTech Innovators} \faLink}{02/2022 - 12/2022}{Melbourne, VIC}
+	\begin{itemize}
+		\item Led a small team in the production of a cloud-based web-app integrated across university medical platforms and nearby hospital groups.
+		\item Designed the app from scratch and oversaw ongoing consultation with the end client regarding requirements and specifications as well as to manage feature releases to production.
+	\end{itemize}
+
+	\divider
+
+	\cvevent{Physics Textbook Author}{\href{https://edrolo.com.au/}{Edrolo} \faLink}{10/2019 - 02/2022}{Melbourne, VIC}
+	\begin{itemize}
+		\item Authored Year 11 and Year 12 physics textbooks and produced digital content used in $\sim$40\% of classrooms across the state of Victoria.
+	\end{itemize}
+
+	\cvsection{Competitions}
+	\cvevent{}{\href{https://sc21.supercomputing.org/program/studentssc/indyscc/}{ISC21} \faLink \hspace{0.1em} Student Cluster Competition (2nd prize)}{11/2021}{Remote}
+	\begin{itemize}
+		\item Optimised builds of scientific applications written in Fortran, such as XCompact3D.
+		\item Bench-marked builds simulations running on distributed systems, improving parallel performance with OpenMP.
+	\end{itemize}
+
+	\divider
+
+	\cvevent{}{A-HUG Cloud Computing Hackathon}{07/2021}{Remote}
+	\begin{itemize}
+		\item Ported scientific and AI applications to an ARM-based architecture and bench-marked the relevant differences in performance between the ARM architecture and the native one.
+	\end{itemize}
+
+	\cvsection{Awards \& Achievements}
+	\smallskip
+	\begin{itemize}
+		\item Dean's honour roll for Faculties of Engineering and Science (2020-2022).
+		\item School Captain of Scotch College, conducted post-graduation in a full-time capacity (2019).
+		\item Graduated high school with ATAR of 99.95 (top 0.05\% of country). Co-Dux of School, Dux of Literature (2018).
+		\item Recipient of \href{https://www.sagse.org.au/}{SAGSE} \faLink \hspace{0.1em} Scholarship for German Language Exchange (2018).
+	\end{itemize}
+
+\end{paracol}
+
+\end{document}
