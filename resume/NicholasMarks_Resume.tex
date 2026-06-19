@@ -15,12 +15,12 @@
 %% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
 
-\documentclass[9pt,a4paper,ragged2e]{altacv}
+\documentclass[10pt,a4paper,ragged2e]{altacv}
 %% AltaCV uses the fontawesome5 and simpleicons packages.
 %% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
 
 % Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=1.2cm,bottom=1.2cm,columnsep=0.8cm}
+\geometry{left=1.6cm,right=1.6cm,top=1.6cm,bottom=1.6cm,columnsep=0.8cm}
 
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
@@ -76,7 +76,7 @@
 \AtBeginEnvironment{itemize}{\small}
 
 %% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+\columnratio{0.64}
 
 % Start a 2-column paracol. Both the left and right columns will automatically
 % break across pages if things get too long.
@@ -86,14 +86,12 @@
 
 	\cvsection{Experience}
 
-	\textbf{Relevant skills:} Python, C++, Java, CMake, Docker, Cloud, Bash \smallskip
-
-	\divider
-
 	\cvevent{SWE - AWS Networking}{DC Lifecycle and Tooling}{09/2025 - Present}{Sydney, AUS}
 	\begin{itemize}
 
-		\item Led design and build of a new automated intake system responding to fiber optic planning signals. This system saved 2+ months of engineering time per year and increased speed average intake creation speed by 50x.
+		\item Technical owner of a new automated intake system responding to fiber optic planning signals. Exposed existing failure mechanisms between tools, wrote design docs and developed new workflows to significantly reduce human touchpoints.  This system saved 2+ months of engineering time per year and increased speed average intake creation speed by 50x.
+		\item Influenced an initiative across multiple orgs to properly support a change management system for in-flight span planning in DC network planning. Drove consensus amongst different teams to address heavily manual processes, simplify error-prone interactions and clean up poor data quality. Reduced the number of rejected intakes by 40\% or $\sim$\$25k per project
+		\item Identified gaps in reuse of existing fiber network and produced a pipeline for aggregating data from multiple sources to surface such spare fiber. Subsequent allocation of spare fiber increased by 15x, reducing fiber deployment times from months to minutes in those cases.
 
 	\end{itemize}
 
@@ -104,42 +102,29 @@
 
 		\item Led development of a control plane alarming service with suppression of alarms during high fault-volume instances. This saved RDS/Aurora teams 20+ hours of operational work upon release of fault injection service features to external customers.
 		\item Enhanced a deadline monitoring service receiving 1+ million workflows per hour  with ``smart" deadlines. This cut or extended workflow timeouts based on historical data to reduce operational load for teams by 32\% each week.
+		\item Recognised security vulnerabilities in our org-wide ticket analytics service that compromised access to the service's underlying databases. Proposed and implemented identity-based access methods and rolled out across multiple teams with no loss of access.
 
 	\end{itemize}
 
-
-	\cvsection{Projects}
-
-	\cvevent{}{Autonomous Navigation through Offline Deep Learning}{07/2023 - 06/2024}{Monash University}
-	\begin{itemize}
-		\item Researched applications of offline deep learning techniques to autonomously navigate a Penguin Pi bot around varying complexities of road tracks.
-		\item Crafted pipeline for training and deploying a model trained via Implicit Q-Learning, using tools like regression analysis and grid-search to optimise trained experts.
-	\end{itemize}
-
-	\divider
-
-	\cvevent{}{Rocket Guidance Systems at \href{https://www.purdueorbital.com/}{Purdue Orbital} \faLink}{01/2023 - 05/2023}{West Lafayette, IN}
-	\begin{itemize}
-		\item Produced control systems on Purdue Orbital's guidance and navigation team for rockets launched by the team in the middle of 2023 as part of Project Icarus.
-		\item Crafted state models and Simulink implementations of rocket attitude control and implemented a real-time operating system to interface between the control system, onboard sensors and diagnostic systems.
-	\end{itemize}
 
 
 	\cvsection{Education}
 
 	\cvevent{BSc Computer Science and Pure Mathematics \newline BE Electrical and Computer Systems Engineering}{Monash University (WAM: 87.8\%, GPA: 3.88/4.00)}{ 03/2020 - 06/2024 }{Melbourne, VIC}
-	\begin{itemize}
-		\item \textit{Relevant coursework (BSc):} Advanced Algorithms, Data Structures, Operating Systems, AI, Computer Architecture, Linear Algebra, Advanced Calculus, Modelling and Simulation, Group Theory, Real \& Functional Analysis, Graph Theory.
-		\item \textit{Relevant coursework (BE):} Embedded Systems, Digital Systems and Logic, Deep Learning, Probability Modelling, FPGA/ASIC Design,  Electrical Circuits, Signals and Systems, Information Theory, Networking, Energy/Power Systems, Web-app Development, Fluid Mechanics.
-	\end{itemize}
+
 
 	\divider
 
 	\cvevent{ Semester Abroad }{Purdue University (WAM: 92.1\%, GPA: 4.00/4.00)}{ 01/2023 - 05/2023 }{West Lafayette, IN}
-	\begin{itemize}
-		\item \textit{Relevant coursework:} Integrated Circuit Design, Control Systems, Electromagnetics, Artificial Intelligence (AI) and Machine Learning.
-	\end{itemize}
 
+	\cvsection{Technical Skills}
+	\smallskip
+	\begin{itemize}
+		\item \textit{Languages:} Java, C/C++, Go, TypeScript, Python, SQL (Postgres), C\#
+		\item \textit{Frameworks:} Node.js, Django, Astro, Vue, NextJS, JUnit, AWS CDK, React
+		\item \textit{AI and HPC:} Pytorch, TensorFlow, OpenMP, CUDA, CMake, Docker, Pandas, Numpy, Bash, Linux
+		\item \textit{Amazon Web Services:} EC2, Lambda, S3, RDS/Aurora, DynamoDB, IAM, API Gateway, Redshift, SQS, SES
+	\end{itemize}
 
 
 	%% Switch to the right column. This will now automatically move to the second
@@ -148,22 +133,23 @@
 
 
 	\cvsection{Competitions \& Research}
-	\cvevent{}{\href{https://sc21.supercomputing.org/program/studentssc/indyscc/}{ISC21} \faLink \hspace{0.1em} Student Cluster Competition (2nd prize)}{11/2021}{Remote}
+	\cvevent{}{Autonomous Navigation through Offline Deep Learning}{07/2023 - 06/2024}{}
 	\begin{itemize}
-		\item Optimised builds of scientific applications written in Fortran, such as XCompact3D.
-		\item Bench-marked builds simulations running on distributed systems, improving parallel performance with OpenMP.
+		\item Researched applications of offline deep learning techniques to autonomously navigate a Penguin Pi bot around varying complexities of road tracks.
+		\item Crafted pipeline for training and deploying a model trained via Implicit Q-Learning, using tools like regression analysis and grid-search to optimise trained experts.
 	\end{itemize}
 
 	\divider
 
-	\cvevent{}{A-HUG Cloud Computing Hackathon}{07/2021}{Remote}
+	\cvevent{}{Rocket Guidance Systems at \href{https://www.purdueorbital.com/}{Purdue Orbital} \faLink}{01/2023 - 05/2023}{}
 	\begin{itemize}
-		\item Ported scientific and AI applications to an ARM-based architecture and bench-marked the relevant differences in performance between the ARM architecture and the native one.
+		\item Produced control systems on Purdue Orbital's guidance and navigation team for rockets launched by the team in the middle of 2023 as part of Project Icarus.
+		\item Crafted state models and Simulink implementations of rocket attitude control and implemented a real-time operating system to interface between the control system, onboard sensors and diagnostic systems.
 	\end{itemize}
 
 	\divider
 
-	\cvevent{}{Robot-assisted Drone Navigation at \href{https://www.deepneuron.org/}{Monash DeepNeuron} \faLink}{08/2022 - 11/2022}{Monash University}
+	\cvevent{}{Robot-assisted Drone Navigation at \href{https://www.deepneuron.org/}{Monash DeepNeuron} \faLink}{08/2022 - 11/2022}{}
 	\begin{itemize}
 		\item Developed a behavioral cloning-based approach to train a AI-assisted drone navigation system capable of flying point-to-point within simulation.
 		\item Evaluated the model performance in comparison to a reinforcement-learning approach on a dataset generated by human participants in a small-scale trial ($\sim$30 participants).
@@ -171,30 +157,11 @@
 
 	\divider
 
-	\cvevent{CO2 Conversion Project Lead}{\href{https://www.mcarboncapture.com/chemecco}{Monash Carbon Capture and Conversion} \faLink}{08/2021 - 12/2023}{Melbourne, VIC}
+	\cvevent{CO2 Conversion Project Lead}{\href{https://www.mcarboncapture.com/chemecco}{Monash Carbon Capture and Conversion} \faLink}{08/2021 - 12/2023}{}
 	\begin{itemize}
 		\item Founded a large-scale research project on the electrochemical reduction of CO2 into fuels in a novel, catalysed flow cell environment.
 		\item Our team received US\$250,000 as a top 23 university finalist worldwide in the \href{https://www.xprize.org/prizes/carbonremoval}{XPRIZE Carbon Removal Competition} \faLink.
 	\end{itemize}
-
-	\cvsection{Awards \& Achievements}
-	\smallskip
-	\begin{itemize}
-		\item Dean's honour roll for Faculties of Engineering and Science (2020-2022).
-		\item School Captain of Scotch College, conducted post-graduation in a full-time capacity (2019).
-		\item Graduated high school with ATAR of 99.95 (top 0.05\% of country). Co-Dux of School, Dux of Literature (2018).
-		\item Recipient of \href{https://www.sagse.org.au/}{SAGSE} \faLink \hspace{0.1em} Scholarship for German Language Exchange (2018).
-	\end{itemize}
-
-	\cvsection{Languages}
-
-	\cvskill{English}{5}
-	% \divider
-
-	\cvskill{German}{4} %% supports X.5 values.
-
-	\cvskill{Spanish}{2.5}
-
 
 \end{paracol}
 

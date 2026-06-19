@@ -258,10 +258,10 @@
 }
 \let\photo\photoR
 
-\newcommand{\namefont}{\Huge\bfseries}
+\newcommand{\namefont}{\huge\bfseries}
 \newcommand{\taglinefont}{\large\bfseries}
 \newcommand{\personalinfofont}{\footnotesize\bfseries}
-\newcommand{\cvsectionfont}{\LARGE\bfseries}
+\newcommand{\cvsectionfont}{\large\bfseries}
 \newcommand{\cvsubsectionfont}{\large\bfseries}
 
 \newcommand{\makecvheader}{%
@@ -296,8 +296,8 @@
 % v1.1.4: fixes inconsistent font size
 % v1.7: adds accsupp ActualText for location and date markers
 \newcommand{\cvevent}[4]{%
-  {\large\color{emphasis}#1\par}
-  \smallskip\normalsize
+  {\normalsize\color{emphasis}#1\par}
+  \smallskip\small
   \ifstrequal{#2}{}{}{
   \textbf{\color{accent}#2}\par
   \smallskip}
